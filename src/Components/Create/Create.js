@@ -15,8 +15,8 @@ const Create = () => {
   })
   const history = useHistory()
   const date = new Date()
-  const handleSubmit = (e)=>{
-    e.preventDefault()
+  const handleSubmit = ()=>{
+   
     firebase.storage().ref(`/image/${product.image.name}`)
      .put(product.image)
      .then(({ref})=>{

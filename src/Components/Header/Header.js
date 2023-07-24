@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import { AuthContext,FirebaseContext } from '../../store/Context';
-import {useHistory} from 'react-router-dom'
+import {useHistory,Link} from 'react-router-dom'
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
 import Search from '../../assets/Search';
@@ -16,7 +16,8 @@ function Header() {
     <div className="headerParentDiv">
       <div className="headerChildDiv">
         <div className="brandName">
-          <OlxLogo></OlxLogo>
+          <Link to={'/'}><OlxLogo></OlxLogo></Link>
+          
         </div>
         <div className="placeSearch">
           <Search></Search>
@@ -42,7 +43,10 @@ function Header() {
           {user ? 
           <span>{user.displayName}</span>
           :
-          <span>Login</span>
+          <Link to={'/login'}>
+           <span>Login</span>
+          </Link>
+         
            }
            {
             user && <span onClick={()=>{
@@ -57,7 +61,8 @@ function Header() {
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            <Link to={'/create'}> <span>SELL</span></Link>
+           
           </div>
         </div>
       </div>
