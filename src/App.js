@@ -4,7 +4,7 @@ import { BrowserRouter as Router,Route } from 'react-router-dom';
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import { AuthContext,FirebaseContext } from './store/Context';
-import Create from './Components/Create/Create';
+import Create from './Pages/Create';
 import Home from './Pages/Home';
 import View from './Pages/ViewPost'
 import Post from './store/PostContext';
